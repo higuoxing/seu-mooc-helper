@@ -1,0 +1,28 @@
+{
+  "name": "I love SEU MOOC",
+  "version": "0.1",
+  "description": "An extension that helps learn SEU MOOC.",
+  "permissions": ["storage", "activeTab", "declarativeContent"],
+  "background": {
+    "scripts": ["background.js"],
+    "persistent": false
+  },
+
+  "content_scripts": [
+    {
+      "matches": ["*://*.chaoxing.com/*"],
+      "js": ["content_script.js"],
+      "all_frames": true
+    }
+  ],
+  "browser_action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "128": "images/seu-helper.png"
+    }
+  },
+  "icons": {
+    "128": "images/seu-helper.png"
+  },
+  "manifest_version": 2
+}
