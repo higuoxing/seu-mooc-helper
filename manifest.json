@@ -2,9 +2,9 @@
   "name": "I love SEU MOOC",
   "version": "0.1",
   "description": "An extension that helps learn SEU MOOC.",
-  "permissions": ["storage", "activeTab", "declarativeContent"],
+  "permissions": ["storage", "tabs", "declarativeContent"],
   "background": {
-    "scripts": ["background.js"],
+    "scripts": ["background.js", "content_script.js"],
     "persistent": false
   },
 

@@ -85,5 +85,21 @@ function auto_answer() {
   });
 }
 
+/// No voice!
+function no_voice() {
+  chrome.storage.local.get("no_voice", function (data) {
+    if (data.no_voice == true) {
+      if (document.querySelector("video") != null) {
+        document.querySelector("video").volume = 0;
+      }
+    }
+  });
+}
+
+/// Call no voice.
+document.addEventListener("DOMSubtreeModified", function (event) {
+  no_voice();
+});
+
 /// Start automatically answer quiz.
 auto_answer();

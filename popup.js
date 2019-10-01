@@ -29,6 +29,8 @@ function create_slide_button(root, id, description) {
         chrome.storage.local.set({ auto_play: this.checked });
       } else if (this.id == "auto_answer") {
         chrome.storage.local.set({ auto_answer: this.checked });
+      } else if (this.id == "no_voice") {
+        chrome.storage.local.set({ no_voice: this.checked });
       }
     });
 
@@ -48,6 +50,7 @@ function create_slide_button(root, id, description) {
 function construct_popup() {
   let page = document.getElementById("page");
   create_slide_button(page, "auto_play", "自动连播");
+  create_slide_button(page, "no_voice", "自动静音");
   create_slide_button(page, "auto_answer", "自动答题");
 }
 
